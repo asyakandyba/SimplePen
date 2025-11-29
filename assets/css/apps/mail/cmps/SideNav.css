@@ -1,13 +1,68 @@
 .side-nav {
+    padding-block: 1rem;
+
+    display: grid;
+    grid-auto-rows: 2rem;
+    grid-row: 1;
+    gap: 1.2rem;
+    align-items: center;
+
+    body.note-menu-open & {
+        width: max-content;
+    }
+
     button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+
+        padding: 1rem;
+        padding-inline-end: 1.5rem;
+        margin-inline: .3rem;
+
         background-color: rgb(194, 231, 255);
         font-weight: 500;
+        font-size: .9rem;
         border: none;
-        padding: 1.2rem 2.2rem;
         border-radius: .8rem;
 
-        >img{
+        >img {
             width: 1.5rem;
+        }
+    }
+}
+
+.side-bar-row {
+    padding-left: 2rem;
+    border-top-right-radius: 5rem;
+    border-bottom-right-radius: 5rem;
+
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    cursor: pointer;
+
+    &:hover {
+        background-color: #f1f3f4;
+    }
+
+    >img {
+        width: 1.2rem;
+    }
+
+    &.active {
+        background-color: var(--mail-clr-active);
+    }
+
+    body.note-menu-open & {
+        padding: 0.4rem;
+        margin-left: 0.9rem;
+        border-radius: 5rem;
+
+        p {
+            display: none;
         }
     }
 }
