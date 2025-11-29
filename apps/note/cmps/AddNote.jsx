@@ -11,6 +11,10 @@ export function AddNote({ saveNote }) {
   const wrapperRef = useRef(null)
   const [searchParams, setSearchParams] = useSearchParams()
 
+  const [isRecording, setIsRecording] = useState(false)
+  const [mediaRecorder, setMediaRecorder] = useState(null)
+  const [audioChunks, setAudioChunks] = useState([])
+
   useEffect(() => {
     const fromMail = searchParams.get('fromMail')
     if (!fromMail) return
@@ -50,6 +54,7 @@ export function AddNote({ saveNote }) {
 
   function onSaveNote(ev) {
     ev.preventDefault()
+    console.log(noteToAdd)
     saveNote(noteToAdd)
     toggleFullAddNote()
     setSearchParams({})
@@ -135,6 +140,48 @@ export function AddNote({ saveNote }) {
     setTodoTxt('')
   }
 
+  function startRecording() {
+    navigator.mediaDevices
+      .getUserMedia({ audio: true })
+      .then(stream => {
+        const recorder = new MediaRecorder(stream)
+        setMediaRecorder(recorder)
+
+        const chunks = [] // local variable for chunks
+
+        recorder.ondataavailable = e => {
+          chunks.push(e.data)
+        }
+
+        recorder.onstop = () => {
+          const audioBlob = new Blob(chunks, { type: 'audio/mp3' })
+          const reader = new FileReader()
+          reader.onloadend = () => {
+            const base64Audio = reader.result
+            setNoteToAdd(prevNote => ({
+              ...prevNote,
+              info: { ...prevNote.info, audio: base64Audio },
+            }))
+            saveNote({
+              ...noteToAdd,
+              info: { ...noteToAdd.info, audio: base64Audio },
+            })
+          }
+          reader.readAsDataURL(audioBlob)
+        }
+
+        recorder.start()
+        setIsRecording(true)
+      })
+      .catch(err => console.error('Microphone access denied:', err))
+  }
+
+  function stopRecording() {
+    if (!mediaRecorder) return
+    mediaRecorder.stop()
+    setIsRecording(false)
+  }
+
   const { title, txt } = noteToAdd.info || {}
 
   return (
@@ -204,10 +251,21 @@ export function AddNote({ saveNote }) {
               <input type="file" accept="video/*" onChange={onVideoUpload} />
             )}
 
-            {/* <InputFeatures
-              onChangeNoteType={onChangeNoteType}
-              toggleFullAddNote={toggleFullAddNote}
-            /> */}
+            {noteToAdd.type === 'record' && (
+              <div className="record-container">
+                <button
+                  className="record-btn"
+                  type="button"
+                  onClick={isRecording ? stopRecording : startRecording}
+                >
+                  {isRecording ? 'Stop Recording' : 'Start Recording'}
+                </button>
+
+                {noteToAdd.info.audio && (
+                  <audio controls src={noteToAdd.info.audio}></audio>
+                )}
+              </div>
+            )}
 
             <button style={{ display: 'none' }} />
           </div>

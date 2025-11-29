@@ -187,6 +187,11 @@ export function OpenNote() {
               <source src={note.info.url} type="video/mp4" />
             </video>
           )}
+          {note.type === 'record' && note.info.audio && (
+            <div className="record-note">
+              <audio controls src={note.info.audio}></audio>
+            </div>
+          )}
 
           <button style={{ display: 'none' }} />
         </div>

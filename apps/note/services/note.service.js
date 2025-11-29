@@ -62,6 +62,7 @@ function getEmptyNote(type = 'text') {
   if (type === 'text') emptyNote.info = { title: '', txt: '' }
   else if (type === 'photo') emptyNote.info = { title: '', url: '' }
   else if (type === 'todo') emptyNote.info = { title: '', todos: [] }
+  else if (type === 'record') emptyNote.info = { title: '', audio: '' }
   return emptyNote
 }
 

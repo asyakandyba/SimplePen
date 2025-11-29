@@ -33,6 +33,14 @@ export function InputFeatures({ onChangeNoteType, toggleFullAddNote }) {
         src="assets/img/note/video.png"
         title="New note with video"
       />
+      <img
+        onClick={() => {
+          onChangeNoteType('record')
+          toggleFullAddNote()
+        }}
+        src="assets/img/note/video.png"
+        title="New note with record"
+      />
     </div>
   )
 }

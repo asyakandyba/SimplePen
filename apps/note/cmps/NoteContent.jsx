@@ -3,6 +3,7 @@ import { TextNote } from './TextNote.jsx'
 import { TodoNote } from './TodoNote.jsx'
 import { VideoNote } from './VideoTodo.jsx'
 import { ColorPalete } from './ColorPalete.jsx'
+import { RecordNote } from './RecordNote.jsx'
 
 const { Link } = ReactRouterDOM
 const { useState } = React
@@ -90,6 +91,7 @@ function DynamicCmp(props) {
     photo: <PhotoNote {...props} />,
     todo: <TodoNote {...props} />,
     video: <VideoNote {...props} />,
+    record: <RecordNote {...props} />,
   }
   return dynamicCmpMap[props.cmpType]
 }
