@@ -5,6 +5,9 @@
 
   width: 100%;
 
+  position: fixed;
+  bottom: 0;
+
   .home & {
     grid-column: span 3;
   }
