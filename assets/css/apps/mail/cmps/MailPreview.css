@@ -1,0 +1,58 @@
+.mail-preview {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    position: relative;
+    height: 40px;
+
+    padding-inline: 1rem;
+    box-shadow: 0px -1px 0px var(--mail-bg-clr1);
+    cursor: pointer;
+
+    >p {
+        font-weight: 700;
+
+        >span {
+            position: absolute;
+            top: 50%;
+            translate: 0 -50%;
+            left: 3rem;
+        }
+    }
+
+    section {
+        gap: 1rem;
+        padding-inline: 1rem;
+    }
+
+    &.read {
+        background-color: var(--mail-bg-clr2);
+
+        >p {
+            font-weight: normal;
+        }
+    }
+
+    &:hover {
+        box-shadow: 0px 0px 5px var(--mail-txt-clr-1);
+    }
+
+    img{
+        width:1.2rem;
+    }
+}
+
+.content {
+    position: absolute;
+    width: 75%;
+    left: 250px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+.fa-solid.fa-star {
+    color: gold;
+}

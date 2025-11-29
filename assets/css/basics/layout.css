@@ -1,0 +1,11 @@
+.note-main-layout {
+  width: 100%;
+
+  display: grid;
+  grid-template-columns: minmax(0, 320px) 4fr;
+  grid-template-rows: 10vh 90vh;
+
+  body.note-menu-open & {
+    grid-template-columns: 1fr 15fr;
+  }
+}

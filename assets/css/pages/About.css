@@ -1,0 +1,42 @@
+.about {
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  gap: 3rem;
+
+  padding-bottom: 2rem;
+
+  .about-content {
+    background-image: url('../../img/about/about-bg.png');
+
+    background-size: cover;
+
+    padding-inline: 12rem;
+    padding-block: 4rem;
+  }
+
+  .about-us-content {
+    align-self: start;
+
+    display: flex;
+    justify-content: center;
+    gap: 4rem;
+
+    > .about-person {
+      display: grid;
+      justify-items: center;
+      gap: 0.5rem;
+
+      > h2 {
+        font-size: 1rem;
+      }
+
+      > img {
+        width: 80%;
+        border: 1px solid #dadce0;
+        border-radius: 8px;
+        box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+      }
+    }
+  }
+}

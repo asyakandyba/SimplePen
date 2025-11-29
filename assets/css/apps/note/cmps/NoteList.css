@@ -1,0 +1,160 @@
+.note-list {
+  grid-column: 2;
+  grid-row: 1;
+
+  padding: 1rem;
+
+  .note-list-header {
+    padding: 1rem;
+
+    letter-spacing: 1px;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    color: var(--clr-note-text-1);
+  }
+}
+
+.notes-container {
+  justify-self: center;
+
+  padding: 1rem;
+
+  column-count: 5;
+  column-gap: 0.7rem;
+
+  .note {
+    width: 100%;
+    margin-bottom: 0.7rem;
+    padding: 0.7rem;
+    border-radius: 8px;
+    border: 1px solid #dadce0;
+
+    font-size: 0.8rem;
+
+    position: relative;
+
+    display: inline-block;
+
+    > .note-icons {
+      display: flex;
+      gap: 5%;
+
+      > img {
+        width: 20px;
+        cursor: pointer;
+      }
+    }
+
+    &:hover {
+      .note-icon {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.note-header {
+  display: flex;
+  justify-content: space-between;
+  > img {
+    width: 25px;
+  }
+
+  .note-title {
+    padding-block: 0.35rem;
+    font-size: 1.3rem;
+  }
+}
+
+.note-todo {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  margin-bottom: 1rem;
+
+  input {
+    accent-color: black;
+  }
+}
+
+.note-photo {
+  margin-bottom: 1rem;
+}
+
+.doto-done {
+  text-decoration: line-through;
+  color: var(--clr-note-text-1);
+}
+
+.video-input {
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.note-paint-palete {
+  display: flex;
+  gap: 3px;
+
+  position: absolute;
+  z-index: 1;
+  bottom: 0;
+  transform: translateY(70%);
+  right: 30px;
+
+  background-color: white;
+  border: 1px solid #dadce0;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  padding: 0.3rem;
+
+  cursor: pointer;
+
+  > :nth-child(1) {
+    border: 1px, solid rgb(205, 205, 205);
+  }
+
+  > * {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    position: relative;
+
+    &:hover {
+      border: 1px, solid rgba(0, 0, 0, 0.649);
+    }
+  }
+
+  .active {
+    border: 2px, solid #a142f4;
+  }
+
+  .active::after {
+    content: '✓';
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 15px;
+    height: 15px;
+
+    background-color: #a142f4;
+    color: white;
+    border-radius: 50%;
+
+    position: absolute;
+    top: -7px;
+    right: -8px;
+  }
+}
+
+.note-icon {
+  &:hover {
+    background-color: rgba(174, 174, 174, 0.254);
+    border-radius: 50%;
+    box-shadow: 0 0 0 6px rgba(174, 174, 174, 0.254);
+  }
+
+  opacity: 0;
+  transition: 0.3s;
+}

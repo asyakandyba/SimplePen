@@ -1,0 +1,42 @@
+.open-note {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  translate: -50% -30%;
+
+  background-color: var(--clr-note-bg-1);
+
+  .max-height {
+    max-height: 500px;
+  }
+
+  > :nth-child(2) {
+    font-weight: bold;
+    font-size: 1.5rem;
+  }
+
+  .note-to-mail {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    right: 0;
+    opacity: 1;
+
+    cursor: pointer;
+
+    &:hover {
+      background-color: rgba(174, 174, 174, 0.254);
+      border-radius: 50%;
+    }
+  }
+}
+
+.note-black-screen {
+  background-color: rgba(0, 0, 0, 0.409);
+
+  width: 100vw;
+  height: 100vh;
+
+  position: fixed;
+  top: 0;
+}

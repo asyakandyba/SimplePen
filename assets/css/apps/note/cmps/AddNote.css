@@ -1,0 +1,70 @@
+.add-note {
+  text-align: center;
+  margin-bottom: 2rem;
+
+  form {
+    .half-note-input {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: auto;
+
+      width: 50vw;
+      max-width: 600px;
+      padding: 0.8rem;
+      border: 1px solid #dadce0;
+      border-radius: 8px;
+      box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+
+      outline: none;
+      > input {
+        width: auto;
+        max-width: 600px;
+        border: none;
+        border-radius: 8px;
+
+        font-size: 1rem;
+        outline: none;
+      }
+    }
+  }
+}
+
+.full-note-input {
+  width: 50vw;
+  max-width: 600px;
+  border: 1px solid #dadce0;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.642);
+  margin: auto;
+  border-radius: 15px;
+
+  display: grid;
+
+  overflow: hidden;
+
+  > * {
+    padding: 0.8rem;
+    border: none;
+    font-size: 1rem;
+    outline: none;
+  }
+
+  > :nth-child(1) {
+    font-weight: bold;
+    font-size: 1.5rem;
+  }
+
+  .todo-input-container {
+    justify-self: start;
+  }
+
+  .todo-input {
+    outline: none;
+    border: none;
+    font-size: 1rem;
+  }
+
+  .todo-preview {
+    text-align: start;
+  }
+}

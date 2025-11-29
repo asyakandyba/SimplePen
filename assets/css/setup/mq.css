@@ -1,0 +1,48 @@
+@media (max-width: 1050px) {
+  .about {
+    .about-content {
+      padding-inline: 1rem;
+    }
+  }
+}
+
+@media (max-width: 750px) {
+  .app-header {
+    display: grid;
+    grid-template-columns: auto 1fr;
+
+    > nav {
+      justify-self: center;
+      grid-row: 2;
+      grid-column: span 2;
+    }
+  }
+
+  .about {
+    .about-content {
+      padding-block: 1.5rem;
+    }
+
+    .about-us-content {
+      gap: 1rem;
+    }
+  }
+}
+
+@media (max-width: 550px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 360px) {
+  .app-header {
+    > nav {
+      font-size: 0.8rem;
+    }
+  }
+
+  .logo {
+    width: 200px;
+  }
+}

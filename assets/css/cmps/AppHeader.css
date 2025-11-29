@@ -1,0 +1,62 @@
+header {
+  background: var(--bg-clr);
+  border-bottom: 2px solid var(--border-clr);
+
+  position: relative;
+  z-index: 2;
+}
+
+.app-header {
+  display: grid;
+  grid-template-columns: auto 3fr auto;
+  justify-items: start;
+  align-items: center;
+  padding: 20px;
+  text-transform: uppercase;
+
+  > nav {
+    justify-self: end;
+  }
+}
+
+nav a {
+  margin: 0.5em;
+}
+
+nav a:active {
+  color: purple;
+}
+
+nav a.active {
+  color: rgb(22, 81, 149);
+  font-weight: bold;
+  text-decoration: overline;
+}
+
+.burger-container {
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+
+  &:hover {
+    background-color: var(--clr-note-bg-2);
+    border-radius: 50%;
+  }
+}
+
+.burger {
+  width: 60%;
+  height: auto;
+
+  .noBurger & {
+    opacity: 0;
+  }
+}
+
+.logo {
+  width: 250px;
+}

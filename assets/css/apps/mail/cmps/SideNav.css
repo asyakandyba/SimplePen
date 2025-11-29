@@ -1,0 +1,13 @@
+.side-nav {
+    button {
+        background-color: rgb(194, 231, 255);
+        font-weight: 500;
+        border: none;
+        padding: 1.2rem 2.2rem;
+        border-radius: .8rem;
+
+        >img{
+            width: 1.5rem;
+        }
+    }
+}

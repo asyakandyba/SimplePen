@@ -1,0 +1,20 @@
+.input-features {
+  display: flex;
+  gap: 1rem;
+
+  width: max-content;
+  > img {
+    width: 20px;
+
+    &:hover {
+      background-color: rgba(174, 174, 174, 0.254);
+      border-radius: 50%;
+      box-shadow: 0 0 0 6px rgba(174, 174, 174, 0.254);
+      cursor: pointer;
+    }
+  }
+
+  .half-note-input & {
+    height: 20px;
+  }
+}

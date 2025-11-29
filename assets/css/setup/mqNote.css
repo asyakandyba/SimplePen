@@ -1,0 +1,153 @@
+@media (max-width: 2700px) {
+  .notes-container {
+    column-count: 8;
+  }
+}
+
+@media (max-width: 2200px) {
+  .notes-container {
+    column-count: 6;
+  }
+}
+
+@media (max-width: 1700px) {
+  .notes-container {
+    column-count: 4;
+  }
+}
+
+@media (max-width: 1250px) {
+  .notes-container {
+    column-count: 3;
+  }
+}
+
+@media (max-width: 1000px) {
+  .notes-container {
+    column-count: 2;
+  }
+}
+
+@media (max-width: 900px) {
+  .note-side-bar {
+    position: absolute;
+    z-index: 2;
+
+    width: 30vw;
+    min-width: 200px;
+    height: 100%;
+
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    background-color: var(--clr-note-bg-1);
+
+    body.note-menu-open & {
+      display: none;
+    }
+  }
+
+  .note-black-screen-for-menu {
+    background-color: rgba(0, 0, 0, 0.409);
+
+    width: 100vw;
+    height: 100vh;
+
+    position: fixed;
+    top: 0;
+    z-index: 1;
+
+    body.note-menu-open & {
+      display: none;
+    }
+  }
+
+  .note-list {
+    grid-column: span 2;
+    grid-row: 1;
+  }
+
+  .notes-container {
+    padding-inline: 0;
+  }
+
+  .open-note {
+    width: 80vw;
+  }
+}
+
+@media (max-width: 800px) {
+  .note-filter {
+    > form {
+      width: 50vw;
+    }
+  }
+
+  .add-note {
+    form {
+      .half-note-input {
+        width: 60vw;
+
+        > input {
+          width: 30vw;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 550px) {
+  .note-list {
+    padding: 0.5rem;
+
+    .note-list-header {
+      padding: 0rem;
+    }
+  }
+
+  .note-filter {
+    > form {
+      width: 90vw;
+
+      .note-txt-filter {
+        width: 100%;
+        padding: 0.7rem;
+      }
+    }
+  }
+
+  .add-note {
+    form {
+      .half-note-input {
+        width: 100%;
+
+        > input {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  .full-note-input {
+    width: 90%;
+  }
+
+  .open-note {
+    width: 90vw;
+  }
+}
+
+@media (max-width: 350px) {
+  .notes-container {
+    justify-self: center;
+
+    padding: 0.5rem;
+
+    /* column-count: 5; */
+    column-gap: 0.5rem;
+
+    .note {
+      width: 100%;
+      padding: 0.5rem;
+      margin-bottom: 0.5rem;
+    }
+  }
+}

@@ -1,0 +1,31 @@
+.app-links {
+    justify-content: space-between;
+    margin-block-end: 3vh;
+
+    >div {
+        width: 15vw;
+        height: fit-content;
+
+        .icon {
+            text-align: center;
+            padding-block: 3vh;
+            margin-block-end: .5rem;
+
+            box-shadow: 0px 0px 5px 0px #d2d2d2;
+            border-radius: 1rem;
+            cursor: pointer;
+
+            >img {
+                width: 40%;
+            }
+        }
+
+        h3 {
+            text-transform: uppercase;
+            cursor: pointer;
+            font-size: 1.25rem;
+        }
+    }
+
+
+}

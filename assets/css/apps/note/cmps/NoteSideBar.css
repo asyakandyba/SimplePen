@@ -1,0 +1,47 @@
+.note-side-bar {
+  padding-block: 1rem;
+
+  display: grid;
+  grid-auto-rows: 2rem;
+  grid-row: 1;
+  gap: 1.2rem;
+  align-items: center;
+
+  body.note-menu-open & {
+    width: max-content;
+  }
+
+  .side-bar-row {
+    padding-left: 1.3rem;
+    border-top-right-radius: 5rem;
+    border-bottom-right-radius: 5rem;
+
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    cursor: pointer;
+
+    &:hover {
+      background-color: #f1f3f4;
+    }
+
+    > img {
+      width: 25px;
+    }
+
+    &.active {
+      background-color: #feefc3;
+    }
+
+    body.note-menu-open & {
+      padding: 0.4rem;
+      margin-left: 0.9rem;
+      border-radius: 5rem;
+
+      > p {
+        display: none;
+      }
+    }
+  }
+}

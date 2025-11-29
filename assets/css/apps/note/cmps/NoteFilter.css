@@ -1,0 +1,33 @@
+.note-filter {
+  > form {
+    width: 35vw;
+    max-width: 600px;
+    margin-inline: auto;
+    border-radius: 10px;
+    padding-left: 1rem;
+    margin-bottom: 1rem;
+
+    display: flex;
+    justify-content: start;
+    align-items: center;
+
+    position: relative;
+
+    background-color: var(--clr-note-bg-2);
+
+    .note-txt-filter {
+      padding: 1rem;
+      border: none;
+      border-radius: 10px;
+
+      background-color: var(--clr-note-bg-2);
+
+      font-size: 1rem;
+      outline: none;
+    }
+  }
+
+  .search-icon {
+    width: 25px;
+  }
+}

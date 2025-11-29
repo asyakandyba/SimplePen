@@ -1,0 +1,8 @@
+ /* mail index  */
+ .mail-index {
+     height: 100vh;
+     background-color: var(--mail-bg-clr);
+
+     color: var(--mail-txt-clr);
+     font-size: 0.875rem;
+ }
