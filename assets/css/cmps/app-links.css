@@ -2,11 +2,11 @@
     justify-content: space-between;
     margin-block-end: 3vh;
 
-    >div {
+    >.link {
         width: 15vw;
         height: fit-content;
 
-        .icon {
+        .link-img {
             text-align: center;
             padding-block: 3vh;
             margin-block-end: .5rem;
