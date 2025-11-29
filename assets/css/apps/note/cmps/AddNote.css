@@ -31,6 +31,8 @@
 }
 
 .full-note-input {
+  position: relative;
+
   width: 50vw;
   max-width: 600px;
   border: 1px solid #dadce0;
@@ -56,6 +58,20 @@
 
   .todo-input-container {
     justify-self: start;
+
+    button {
+      position: absolute;
+      right: 20px;
+      bottom: 20px;
+
+      background-color: var(--clr-note-bg-1);
+      border: none;
+
+      &:hover {
+        background-color: var(--clr-note-bg-2);
+        box-shadow: 0 0 0 10px var(--clr-note-bg-2);
+      }
+    }
   }
 
   .todo-input {

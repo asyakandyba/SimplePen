@@ -190,7 +190,7 @@ export function AddNote({ saveNote }) {
                   }}
                 />
                 <button type="button" onClick={onSaveNote}>
-                  Done!
+                  Close
                 </button>
 
                 <ul className="todo-preview">
