@@ -1,0 +1,42 @@
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  width: 100%;
+
+  .home & {
+    grid-column: span 3;
+  }
+
+  background: var(--clr-note-bg-1);
+  border-top: 2px solid var(--clr-note-bg-3);
+
+  padding: 1rem 2rem;
+
+  .footer-logo {
+    width: 100px;
+    height: auto;
+  }
+
+  .footer-links {
+    display: flex;
+    gap: 4rem;
+
+    cursor: pointer;
+  }
+
+  .footer-social {
+    display: flex;
+    gap: 1rem;
+
+    cursor: pointer;
+
+    > img {
+      width: 35px;
+      height: auto;
+      border: 2px solid var(--clr-note-bg-3);
+      border-radius: 50%;
+    }
+  }
+}

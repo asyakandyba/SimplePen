@@ -4,8 +4,6 @@
   align-items: center;
   gap: 3rem;
 
-  padding-bottom: 2rem;
-
   .about-content {
     background-image: url('../../img/about/about-bg.png');
 

@@ -1,3 +1,5 @@
+import { Footer } from '../cmps/Footer.jsx'
+
 export function About() {
   return (
     <section className="about">
@@ -38,6 +40,7 @@ export function About() {
           <h2>Asya</h2>
         </div>
       </div>
+      <Footer />
     </section>
   )
 }

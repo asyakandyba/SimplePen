@@ -1,3 +1,5 @@
+import { Footer } from '../cmps/Footer.jsx'
+
 const { NavLink } = ReactRouterDOM
 
 export function Home() {
@@ -51,7 +53,7 @@ export function Home() {
         </div>
       </section>
 
-      <footer className="flex">footer</footer>
+      <Footer />
     </section>
   )
 }

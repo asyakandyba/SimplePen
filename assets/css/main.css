@@ -20,6 +20,7 @@
 @import './cmps/AppHeader.css';
 @import './cmps/Loader.css';
 @import './cmps/app-links.css';
+@import './cmps/Footer.css';
 
 /* Notes */
 @import './apps/note/cmps/NoteSideBar.css';
