@@ -23,7 +23,12 @@
     display: flex;
     gap: 4rem;
 
-    cursor: pointer;
+    > p {
+      cursor: pointer;
+      &:hover {
+        box-shadow: 0 -3px 0 0 var(--clr-note-bg-3);
+      }
+    }
   }
 
   .footer-social {
@@ -37,6 +42,10 @@
       height: auto;
       border: 2px solid var(--clr-note-bg-3);
       border-radius: 50%;
+
+      &:hover {
+        background-color: var(--clr-note-bg-3);
+      }
     }
   }
 }
