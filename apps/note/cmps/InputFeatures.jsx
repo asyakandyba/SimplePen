@@ -38,7 +38,7 @@ export function InputFeatures({ onChangeNoteType, toggleFullAddNote }) {
           onChangeNoteType('record')
           toggleFullAddNote()
         }}
-        src="assets/img/note/video.png"
+        src="assets/img/note/record.png"
         title="New note with record"
       />
     </div>
