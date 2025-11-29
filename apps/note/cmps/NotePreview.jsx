@@ -7,6 +7,7 @@ export function NotePreview({
   toggleTodo,
   paintNote,
   pinNote,
+  updateOrder,
 }) {
   const pinNotes = notes.filter(note => note.isPinned)
   const notPinNotes = notes.filter(note => !note.isPinned)
@@ -21,6 +22,7 @@ export function NotePreview({
         notes={pinNotes}
         removeNote={removeNote}
         pinNote={pinNote}
+        updateOrder={updateOrder}
       />
       <h1 className="note-list-header">Others</h1>
       <NoteContent
@@ -29,6 +31,7 @@ export function NotePreview({
         notes={notPinNotes}
         removeNote={removeNote}
         pinNote={pinNote}
+        updateOrder={updateOrder}
       />
     </React.Fragment>
   )

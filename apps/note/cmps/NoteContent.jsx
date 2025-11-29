@@ -14,8 +14,10 @@ export function NoteContent({
   paintNote,
   removeNote,
   pinNote,
+  updateOrder,
 }) {
   const [colorOpenId, setColorOpenId] = useState('')
+  const [draggedId, setDraggedId] = useState(null)
 
   function onPaintNote(id) {
     setColorOpenId(colorOpenId => {
@@ -32,48 +34,90 @@ export function NoteContent({
     pinNote(id)
   }
 
+  function handleDragStart(ev, id) {
+    setDraggedId(id)
+    ev.dataTransfer.effectAllowed = 'move'
+    ev.currentTarget.classList.add('dragging')
+  }
+
+  function handleDragOver(ev, targetId) {
+    ev.preventDefault()
+    if (draggedId === targetId) return
+
+    reorderNotes(draggedId, targetId)
+  }
+
+  function handleDragEnd(ev) {
+    setDraggedId(null)
+    ev.currentTarget.classList.remove('dragging')
+  }
+
+  function reorderNotes(dragId, overId) {
+    const newOrder = [...notes]
+    const fromIdx = newOrder.findIndex(n => n.id === dragId)
+    const toIdx = newOrder.findIndex(n => n.id === overId)
+
+    // Move item
+    const [moved] = newOrder.splice(fromIdx, 1)
+    newOrder.splice(toIdx, 0, moved)
+
+    // Inform parent
+    pinNote(null, newOrder)
+    updateOrder(newOrder)
+  }
+
   return (
     <section className="notes-container">
       {notes.map(({ id, info, type, style }) => {
         return (
-          <div key={id} className="note" style={style}>
-            <Link to={`/note/${id}`}>
-              <div className="note-header">
-                <h2 className="note-title">{info.title}</h2>
+          <div
+            key={id}
+            className="note"
+            style={style}
+            draggable
+            onDragStart={ev => handleDragStart(ev, id)}
+            onDragOver={ev => handleDragOver(ev, id)}
+            onDragEnd={handleDragEnd}
+          >
+            <div key={id} className="" style={style}>
+              <Link to={`/note/${id}`}>
+                <div className="note-header">
+                  <h2 className="note-title">{info.title}</h2>
+                  <img
+                    className="note-icon"
+                    onClick={ev => {
+                      ev.preventDefault()
+                      ev.stopPropagation()
+                      onPinNote(id)
+                    }}
+                    src="assets/img/note/pin.png"
+                  />
+                </div>
+                <DynamicCmp
+                  cmpType={type}
+                  info={info}
+                  noteId={id}
+                  toggleTodo={toggleTodo}
+                />
+              </Link>
+              <div className="note-icons">
                 <img
                   className="note-icon"
                   onClick={ev => {
-                    ev.preventDefault()
                     ev.stopPropagation()
-                    onPinNote(id)
+                    onPaintNote(id)
                   }}
-                  src="assets/img/note/pin.png"
+                  src="assets/img/note/paint.png"
+                />
+                <img
+                  className="note-icon"
+                  onClick={ev => {
+                    ev.stopPropagation()
+                    onRemoveNote(id)
+                  }}
+                  src="assets/img/note/bin.png"
                 />
               </div>
-              <DynamicCmp
-                cmpType={type}
-                info={info}
-                noteId={id}
-                toggleTodo={toggleTodo}
-              />
-            </Link>
-            <div className="note-icons">
-              <img
-                className="note-icon"
-                onClick={ev => {
-                  ev.stopPropagation()
-                  onPaintNote(id)
-                }}
-                src="assets/img/note/paint.png"
-              />
-              <img
-                className="note-icon"
-                onClick={ev => {
-                  ev.stopPropagation()
-                  onRemoveNote(id)
-                }}
-                src="assets/img/note/bin.png"
-              />
             </div>
             {colorOpenId === id && (
               <ColorPalete noteId={id} paintNote={paintNote} />

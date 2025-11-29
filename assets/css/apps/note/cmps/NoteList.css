@@ -35,7 +35,7 @@
 
     display: inline-block;
 
-    > .note-icons {
+    .note-icons {
       display: flex;
       gap: 5%;
 
@@ -50,6 +50,8 @@
         opacity: 1;
       }
     }
+
+    cursor: grab;
   }
 }
 

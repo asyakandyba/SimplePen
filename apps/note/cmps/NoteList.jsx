@@ -11,6 +11,7 @@ export function NoteList({
   pinNote,
   defaultFilter,
   onSetFilter,
+  updateOrder,
 }) {
   return (
     <section className="note-list">
@@ -22,6 +23,7 @@ export function NoteList({
         paintNote={paintNote}
         toggleTodo={toggleTodo}
         pinNote={pinNote}
+        updateOrder={updateOrder}
       />
     </section>
   )

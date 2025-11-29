@@ -101,6 +101,11 @@ export function NoteIndex() {
     setFilterBy(filterBy => ({ ...filterBy, type }))
   }
 
+  function updateOrder(newOrder) {
+    setNotes(newOrder)
+    noteService.saveAll(newOrder)
+  }
+
   return (
     <section className="note-index note-main-layout">
       <div className="note-black-screen-for-menu"></div>
@@ -114,6 +119,7 @@ export function NoteIndex() {
         pinNote={pinNote}
         defaultFilter={filterBy}
         onSetFilter={onSetFilter}
+        updateOrder={updateOrder}
       />
       <Outlet context={{ saveNote, toggleTodo }} />
     </section>
