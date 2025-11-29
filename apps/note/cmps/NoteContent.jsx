@@ -117,7 +117,7 @@ export function NoteContent({
               </div>
             </div>
             {colorOpenId === id && (
-              <ColorPalete noteId={id} paintNote={paintNote} />
+              <ColorPalete noteId={id} paintNote={paintNote} style={style} />
             )}
           </div>
         )
