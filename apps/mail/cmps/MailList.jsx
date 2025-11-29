@@ -19,8 +19,6 @@ export function MailList({ mails, onSetSortBy, onRemoveMail, onToggleRead, onTog
         setActiveSort(sort)
     }
 
-    console.log('activeSort:', activeSort)
-
     return (
         <section className="mail-list">
             <section className="sort flex">

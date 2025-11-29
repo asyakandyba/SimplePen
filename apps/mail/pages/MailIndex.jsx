@@ -35,24 +35,13 @@ export function MailIndex() {
         setSortBy(sortByToEdit)
     }
 
-    function saveMail(mail) {
-        mail.sentAt = Date.now()
+    function saveMail(mail, msg) {
         mailService.save(mail)
             .then(() => {
                 setMails([mail, ...mails])
-                showSuccessMsg('Sent')
+                showSuccessMsg(msg)
             })
-            .catch(() => showErrorMsg('Failed to send Mail'))
-    }
-
-    function closeCompose(mail) {
-        if (mail.subject || mail.body || mail.to) {
-            mailService.save(mail)
-                .then(() => {
-                    setMails([mail, ...mails])
-                    showSuccessMsg('Added to drafts')
-                })
-        }
+            .catch(() => showErrorMsg('Failed to save mail'))
     }
 
     function onRemoveMail(ev, mail) {
@@ -105,9 +94,12 @@ export function MailIndex() {
                         onToggleStar={onToggleStar}
                     />)
                 }
-                <Outlet context={{ onToggleRead, saveMail, closeCompose }} />
+                <Outlet context={{ onToggleRead, saveMail }} />
             </main>
         </section>
     )
 }
+
+
+
 
