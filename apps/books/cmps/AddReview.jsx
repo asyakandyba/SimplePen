@@ -113,8 +113,8 @@ export function AddReview({ saveReview, addReviewToggle }) {
         />
 
         <section className="review-btns">
-          <button>Save</button>
-          <button type="button" onClick={addReviewToggle}>
+          <button className="book-btn">Save</button>
+          <button className="book-btn" type="button" onClick={addReviewToggle}>
             Cancel
           </button>
         </section>

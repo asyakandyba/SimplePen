@@ -142,9 +142,9 @@ export function BookEdit() {
           id="price"
         />
 
-        <section>
-          <button>Save</button>
-          <button type="button">
+        <section className="edit-book-btns">
+          <button className="book-btn">Save</button>
+          <button className="book-btn" type="button">
             <Link to="/book">Cancel</Link>
           </button>
         </section>

@@ -32,3 +32,8 @@
   color: grey;
   pointer-events: none;
 }
+
+.edit-book-btns {
+  grid-column: 1 / span 2;
+  margin: auto;
+}

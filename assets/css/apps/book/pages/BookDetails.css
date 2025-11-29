@@ -1,6 +1,7 @@
 .book-details {
   display: grid;
   grid-template-columns: 20vw 40vw;
+  gap: 1rem;
   justify-items: start;
   justify-content: center;
   align-items: center;
@@ -10,8 +11,9 @@
 .book-img-container {
   justify-self: end;
   display: grid;
+  gap: 0.5rem;
   grid-column: 1;
-  grid-row: 1 / span 10;
+  grid-row: 1 / span 8;
 
   > :nth-child(1) {
     grid-row: 1;
@@ -54,13 +56,12 @@
 
 .on-sale {
   padding: 5px;
+  grid-column: 1;
+  grid-row: 1;
 
-  position: absolute;
-  left: 10px;
-  transform: rotate(-25deg);
-
-  background-color: red;
-  color: rgb(255, 208, 0);
+  background-color: rgb(255, 243, 84);
+  color: rgb(255, 0, 0);
+  font-weight: bold;
 }
 
 .read-more-btn {
@@ -90,46 +91,46 @@
 }
 
 .review-row {
-  border: 3px solid var(--clr-primary-2);
-  border-radius: 10px;
-  padding: 10px;
-
-  display: grid;
-  justify-items: center;
-  align-items: center;
-
-  > :nth-child(2) {
-    grid-column: 1;
-    grid-row: 2;
-  }
-
-  > :nth-child(3) {
-    grid-column: 1;
-  }
-
-  > :nth-child(4) {
-    grid-column: 2;
-    grid-row: 1 / span 3;
-  }
-
   position: relative;
+  background-color: #f9f9f9;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.533);
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  font-size: 1rem;
+}
 
-  > p {
-    margin: 0px;
-  }
+.review-row p {
+  margin: 0;
+  line-height: 1.4;
+  color: #333;
+}
+
+/* Header with name, rating, and date */
+.review-row p:nth-child(1) {
+  font-weight: bold; /* Name */
+  font-size: 1rem;
 }
 
 .delete-review {
-  cursor: pointer;
-  background-color: var(--clr-primary-4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   position: absolute;
   right: 2px;
 
-  width: 2rem;
+  width: 1.7rem;
   border-radius: 50%;
 
-  &:hover {
-    background-color: var(--clr-primary-3);
+  cursor: pointer;
+}
+
+.book-content {
+  > p {
+    margin-block: 0.5rem;
   }
 }

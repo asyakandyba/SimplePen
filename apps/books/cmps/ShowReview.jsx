@@ -13,7 +13,7 @@ export function ShowReviews({ book, deleteReview }) {
           <p>{review.readAt}</p>
           <p>{review.description}</p>
           <button
-            className="delete-review"
+            className="delete-review book-btn"
             onClick={() => {
               deleteReview(review)
             }}

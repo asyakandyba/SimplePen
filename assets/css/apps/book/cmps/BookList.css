@@ -29,15 +29,17 @@
 }
 
 .book-btn {
-  padding: 0.5rem;
-  border: 1px solid var(--book-bg);
+  padding-inline: 0.5rem;
+  padding-block: 0.3rem;
+  border: 1px solid var(--bg-clr);
+
   border-radius: 10px;
 
   transition: background-color 0.3s ease;
 
-  background-color: var(--bg-clr);
+  background-color: var(--book-bg);
 
   &:hover {
-    background-color: var(--book-bg);
+    box-shadow: 0 0 0 2px var(--book-bg);
   }
 }

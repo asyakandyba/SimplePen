@@ -88,14 +88,22 @@ export function BookDetails() {
       {book.listPrice.isOnSale && <div className="on-sale">On Sale!</div>}
       <h1>{book.title}</h1>
       <h2>By {[...book.authors]}</h2>
-      <p>Language: {setLanguage(book.language)}</p>
-      <p>
-        Pages: {book.pageCount}, {pageCountText()}
-      </p>
-      <p>
-        Published: {book.publishedDate}, {bookState()}
-      </p>
-      <button onClick={addReviewToggle}>Write a Review</button>
+      <section className="book-content">
+        <p>
+          <strong>Language: </strong> {setLanguage(book.language)}
+        </p>
+        <p>
+          <strong>Pages: </strong>
+          {book.pageCount}, {pageCountText()}
+        </p>
+        <p>
+          <strong>Published: </strong>
+          {book.publishedDate}, {bookState()}
+        </p>
+      </section>
+      <button className="book-btn" onClick={addReviewToggle}>
+        Write a Review
+      </button>
 
       <h2>Description</h2>
       <LongText txt={book.description} length={100} />
@@ -106,14 +114,16 @@ export function BookDetails() {
           ' ' +
           currencySign(book.listPrice.currencyCode)}
       </p>
-      <button onClick={onBack}>Back</button>
+      <button className="book-btn" onClick={onBack}>
+        Back
+      </button>
 
       <section className="book-img-container">
         <img src={book.thumbnail} />
-        <button>
+        <button className="book-btn">
           <Link to={`/book/${book.prevBookId}`}>Prev</Link>
         </button>
-        <button>
+        <button className="book-btn">
           <Link to={`/book/${book.nextBookId}`}>Next</Link>
         </button>
       </section>

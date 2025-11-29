@@ -3,6 +3,7 @@ import { BookFilter } from '../cmps/BookFilter.jsx'
 import { bookService } from '../services/book.service.js'
 import { showErrorMsg, showSuccessMsg } from '../services/event-bus.service.js'
 import { useSearchParamsFilter } from '../customHooks/useSearchParamsFilter.js'
+import { Loader } from '../../../cmps/Loader.jsx'
 
 const { useState, useEffect } = React
 const { Link } = ReactRouterDOM
@@ -39,11 +40,11 @@ export function BookIndex() {
     setFilterBy(filterBy => ({ ...filterBy, ...newFilterBy }))
   }
 
-  if (!books) return <div>Loading...</div>
+  if (!books) return <Loader />
   return (
     <section className="book-index">
       <BookFilter defaultFilter={filterBy} onSetFilter={onSetFilter} />
-      <button>
+      <button className="book-btn">
         <Link to="/book/edit">Add Book</Link>
       </button>
       <BookList books={books} onRemoveBook={onRemoveBook} />

@@ -41,13 +41,12 @@ export function BookFilter({ defaultFilter, onSetFilter }) {
           placeholder="Search books..."
         />
 
-        <label htmlFor="price">Min Price:</label>
         <input
           onChange={handleChange}
           value={price || ''}
           name="price"
-          id="price"
           type="number"
+          placeholder="Insert minimun price..."
         />
       </form>
     </section>
