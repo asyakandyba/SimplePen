@@ -7,9 +7,7 @@ export function BookPreview({ book }) {
 
   return (
     <article className="book-preview">
-      <img src={url} alt="Book Image" />
-      {/* <h2>Title: {title}</h2>
-      <h3>Authors: {[...authors]}</h3> */}
+      <img className="book-image" src={url} alt="Book Image" />
       <h3>{listPrice.amount + ' ' + currencySign(listPrice.currencyCode)}</h3>
     </article>
   )

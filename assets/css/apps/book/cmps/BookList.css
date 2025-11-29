@@ -1,8 +1,17 @@
 .book-list {
+  position: relative;
+
   list-style: none;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
   gap: 15px;
+
+  .book-features {
+    display: grid;
+    grid-auto-flow: column;
+    align-content: center;
+    gap: 5px;
+  }
 }
 
 .book-list li {
@@ -17,4 +26,18 @@
 
 .book-list li.loading {
   opacity: 0.7;
+}
+
+.book-btn {
+  padding: 0.5rem;
+  border: 1px solid var(--book-bg);
+  border-radius: 10px;
+
+  transition: background-color 0.3s ease;
+
+  background-color: var(--bg-clr);
+
+  &:hover {
+    background-color: var(--book-bg);
+  }
 }
