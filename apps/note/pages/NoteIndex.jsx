@@ -115,7 +115,7 @@ export function NoteIndex() {
         defaultFilter={filterBy}
         onSetFilter={onSetFilter}
       />
-      <Outlet context={{ saveNote }} />
+      <Outlet context={{ saveNote, toggleTodo }} />
     </section>
   )
 }

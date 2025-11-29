@@ -10,8 +10,9 @@ export function OpenNote() {
   const { noteId } = useParams()
   const [note, setNote] = useState(null)
   const navigate = useNavigate()
-  const { saveNote } = useOutletContext()
+  const { saveNote, toggleTodo } = useOutletContext()
   const [searchParams, setSearchParams] = useSearchParams()
+  const [todoTxt, setTodoTxt] = useState('')
 
   useEffect(() => {
     if (!note) return
@@ -32,7 +33,7 @@ export function OpenNote() {
   }
 
   function onSaveNote(ev) {
-    ev.preventDefault()
+    if (ev) ev.preventDefault()
     saveNote(note)
     onBack()
   }
@@ -84,6 +85,33 @@ export function OpenNote() {
     navigate(`/mail/compose?subject=${title}&body=${txt}`)
   }
 
+  function onToggleTodo(noteId, todoId) {
+    setNote(prevNote => {
+      const todos = prevNote.info.todos.map(todo =>
+        todo.id === todoId ? { ...todo, isDone: !todo.isDone } : todo
+      )
+
+      return {
+        ...prevNote,
+        info: { ...prevNote.info, todos },
+      }
+    })
+    toggleTodo(noteId, todoId)
+  }
+
+  function addTodo() {
+    const updatedNote = {
+      ...note,
+      info: {
+        ...note.info,
+        todos: [...note.info.todos, noteService.getEmptyTodo(todoTxt)],
+      },
+    }
+    setNote(updatedNote)
+    setTodoTxt('')
+    saveNote(updatedNote)
+  }
+
   if (!note) return
 
   return (
@@ -116,19 +144,41 @@ export function OpenNote() {
           )}
           {note.type === 'todo' && (
             <div className="todo-input-container">
-              <ul className="todo-preview">
+              <ul className="todo-preview clean-list">
                 {note.info.todos.map((todo, idx) => (
                   <li key={todo.id}>
-                    <input
-                      name={todo.id}
-                      onChange={handleTodoChange}
-                      className="todo-input"
-                      type="text"
-                      placeholder="Add a todo..."
-                      value={todo.txt}
-                    />
+                    <label onClick={ev => ev.stopPropagation()}>
+                      <input
+                        onClick={ev => ev.stopPropagation()}
+                        onChange={() => onToggleTodo(noteId, todo.id)}
+                        type="checkbox"
+                        checked={todo.isDone}
+                      />
+                      <input
+                        name={todo.id}
+                        onChange={handleTodoChange}
+                        className="todo-input"
+                        type="text"
+                        placeholder="Add a todo..."
+                        value={todo.txt}
+                      />
+                    </label>
                   </li>
                 ))}
+
+                <input
+                  className="todo-input"
+                  type="text"
+                  placeholder="Add a todo..."
+                  value={todoTxt}
+                  onChange={ev => setTodoTxt(ev.target.value)}
+                  onKeyDown={ev => {
+                    if (ev.key === 'Enter') {
+                      ev.preventDefault()
+                      addTodo()
+                    }
+                  }}
+                />
               </ul>
             </div>
           )}
