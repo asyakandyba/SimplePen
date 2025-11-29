@@ -82,7 +82,7 @@ export function MailIndex() {
     if (!mails) return <Loader />
 
     return (
-        <section className="mail-index flex space-between">
+        <section className="mail-index flex">
             <SideNav onSetFilterBy={onSetFilterBy} />
             <main>
                 <MailFilter onSetFilterBy={onSetFilterBy} />

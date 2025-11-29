@@ -7,7 +7,7 @@ export function SideNav({ onSetFilterBy }) {
     mailService.getUnreadMails().then(setUnreadCount)
 
     return (
-        <nav className="side-nav note-side-bar">
+        <nav className="side-nav">
             <Link to="/mail/compose">
                 <button>
                     <img src="assets/img/mail/compose.svg" />
