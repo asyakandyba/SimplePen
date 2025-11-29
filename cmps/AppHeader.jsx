@@ -26,20 +26,19 @@ export function AppHeader() {
         <img className="burger" src="assets/img/note/burger.png" />
       </div>
 
-      <Link to="/">
-        {(pathname === '/' || pathname === '/about') && (
-          <img className="logo" src="assets/img/main/logo-hub.png" />
-        )}
-        {pathname.includes('/mail') && (
-          <img className="logo" src="assets/img/main/logo-email.png" />
-        )}
-        {pathname.includes('/note') && (
-          <img className="logo" src="assets/img/main/logo-notes.png" />
-        )}
-        {pathname.includes('/book') && (
-          <img className="logo" src="assets/img/main/logo-books.png" />
-        )}
-      </Link>
+      {(pathname === '/' || pathname === '/about') && (
+        <img className="logo" src="assets/img/main/logo-hub.png" />
+      )}
+      {pathname.includes('/mail') && (
+        <img className="logo" src="assets/img/main/logo-email.png" />
+      )}
+      {pathname.includes('/note') && (
+        <img className="logo" src="assets/img/main/logo-notes.png" />
+      )}
+      {pathname.includes('/book') && (
+        <img className="logo" src="assets/img/main/logo-books.png" />
+      )}
+
       <nav>
         <NavLink to="/">Home</NavLink>
         <NavLink to="/mail">Email</NavLink>
