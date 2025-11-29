@@ -10,6 +10,7 @@ export const noteService = {
   get,
   remove,
   save,
+  saveAll,
   getEmptyNote,
   getEmptyTodo,
   getDefaultFilter,
@@ -49,6 +50,10 @@ function remove(noteId) {
 function save(note) {
   if (note.id) return storageService.put(NOTE_KEY, note)
   else return storageService.post(NOTE_KEY, note)
+}
+
+function saveAll(notes) {
+  return storageService.saveAll(NOTE_KEY, notes)
 }
 
 function getEmptyNote(type = 'text') {

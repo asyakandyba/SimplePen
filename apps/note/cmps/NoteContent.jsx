@@ -37,7 +37,6 @@ export function NoteContent({
   function handleDragStart(ev, id) {
     setDraggedId(id)
     ev.dataTransfer.effectAllowed = 'move'
-    ev.currentTarget.classList.add('dragging')
   }
 
   function handleDragOver(ev, targetId) {
@@ -47,22 +46,21 @@ export function NoteContent({
     reorderNotes(draggedId, targetId)
   }
 
-  function handleDragEnd(ev) {
+  function handleDragEnd() {
     setDraggedId(null)
-    ev.currentTarget.classList.remove('dragging')
   }
 
   function reorderNotes(dragId, overId) {
     const newOrder = [...notes]
-    const fromIdx = newOrder.findIndex(n => n.id === dragId)
-    const toIdx = newOrder.findIndex(n => n.id === overId)
+    const fromIdx = newOrder.findIndex(note => note.id === dragId)
+    const toIdx = newOrder.findIndex(note => note.id === overId)
 
     // Move item
     const [moved] = newOrder.splice(fromIdx, 1)
     newOrder.splice(toIdx, 0, moved)
 
     // Inform parent
-    pinNote(null, newOrder)
+    // pinNote(null, newOrder)
     updateOrder(newOrder)
   }
 
@@ -82,7 +80,7 @@ export function NoteContent({
             <div key={id} className="" style={style}>
               <Link to={`/note/${id}`}>
                 <div className="note-header">
-                  <h2 className="note-title">{info.title}</h2>
+                  <h2 className="note-title">{info.title || 'No title'}</h2>
                   <img
                     className="note-icon"
                     onClick={ev => {
