@@ -1,10 +1,10 @@
-const { NavLink, Link } = ReactRouterDOM
+const { NavLink } = ReactRouterDOM
 
 export function Home() {
   return (
     <section className="home">
       <img src="assets/img/home-bg.png" />
-      <div className="txt">
+      <div className="home-contect">
         <h2>Where Am I?</h2>
 
         <p>
@@ -23,27 +23,27 @@ export function Home() {
         </p>
       </div>
       <section className="app-links flex">
-        <div className="books">
+        <div className="link">
           <NavLink to="/book">
-            <div className="icon">
+            <div className="link-img">
               <img src="assets/img/book.png" />
             </div>
             <h3>Books</h3>
           </NavLink>
         </div>
 
-        <div className="mail">
+        <div className="link">
           <NavLink to="/mail">
-            <div className="icon">
+            <div className="link-img">
               <img src="assets/img/email.png" />
             </div>
             <h3>Email</h3>
           </NavLink>
         </div>
 
-        <div className="notes">
+        <div className="link">
           <NavLink to="/note">
-            <div className="icon">
+            <div className="link-img">
               <img src="assets/img/notebook.png" />
             </div>
             <h3>Notes</h3>
