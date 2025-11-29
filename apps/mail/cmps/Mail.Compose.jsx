@@ -9,7 +9,7 @@ const { useNavigate, useParams, useSearchParams, useOutletContext } =
 export function MailCompose() {
     const [mail, setMail] = useState(mailService.getEmptyMail())
     const [isLoading, setIsLoading] = useState(false)
-    const { saveMail, closeCompose } = useOutletContext()
+    const { saveMail } = useOutletContext()
 
     const [searchParams, setSearchParams] = useSearchParams()
     const { mailId } = useParams()
@@ -41,15 +41,16 @@ export function MailCompose() {
             .finally(() => setIsLoading(false))
     }
 
-    function onSaveMail(ev, mail) {
-        ev.preventDefault()
-        onCloseCompose(mail)
-        saveMail(mail)
-    }
-
-    function onCloseCompose(mail) {
+    function onSaveMail(mail, ev) {
+        if (ev) {
+            mail.sentAt = Date.now()
+            ev.preventDefault()
+        }
         navigate('/mail')
-        closeCompose(mail)
+
+        if (mail.subject || mail.body || mail.to) {
+            saveMail(mail)
+        }
     }
 
     function handleChange({ target }) {
@@ -84,7 +85,7 @@ export function MailCompose() {
     return (
         <form
             className={`mail-compose flex column ${loadingClass}`}
-            onSubmit={event => onSaveMail(event, mail)}
+            onSubmit={event => onSaveMail(mail, event)}
         >
             <section className="flex">
                 <p>New Message</p>
@@ -93,7 +94,7 @@ export function MailCompose() {
                     <img src="assets/img/mail/make-note.svg" />
                 </button>
 
-                <button type="button" onClick={() => onCloseCompose(mail)}>
+                <button type="button" onClick={() => onSaveMail(mail)}>
                     <img src="assets/img/mail/close.svg" />
                 </button>
             </section>

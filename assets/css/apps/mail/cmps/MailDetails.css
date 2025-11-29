@@ -1,0 +1,56 @@
+.mail-details {
+    position: relative;
+    background-color: white;
+
+    width: 115%;
+    height: 100%;
+    margin-block: 1.5rem;
+    border-radius: 2rem;
+
+    color: var(--mail-txt-clr);
+    font-size: 0.875rem;
+
+    h1 {
+        font-weight: normal;
+        margin-block: 5vh 2vh;
+    }
+
+    >div {
+        width: 70vw;
+        margin-inline-start: 5rem;
+        margin-block-end: 3rem;
+        gap: .5rem;
+    }
+
+    .account {
+        position: relative;
+        height: 3rem;
+    }
+
+    p {
+        margin: 0;
+    }
+
+    img {
+        position: absolute;
+        top: -.6rem;
+        left: -4rem;
+        width: 4rem;
+    }
+
+    button{
+        padding: .5rem 2rem;
+        margin-block: 2rem;
+        width: fit-content;
+
+        background-color: inherit;
+        color: var(--mail-txt-clr-1);
+
+        border: 2px solid var(--mail-txt-clr-1);
+        border-radius: 2rem;
+
+        &:hover{
+            background-color: rgb(239, 239, 239);
+        }
+    }
+}

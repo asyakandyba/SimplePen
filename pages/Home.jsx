@@ -6,7 +6,7 @@ export function Home() {
   return (
     <section className="home">
       <img src="assets/img/home-bg.png" />
-      <div className="home-contect">
+      <div className="home-content">
         <h2>Where Am I?</h2>
 
         <p>

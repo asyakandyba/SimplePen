@@ -1,6 +1,6 @@
 import { MailPreview } from "./MailPreview.jsx"
 
-const { useState, useEffect } = React
+const { useState } = React
 
 export function MailList({ mails, onSetSortBy, onRemoveMail, onToggleRead, onToggleStar }) {
     const [isAlphaUp, setIsAlphaUp] = useState(false)
@@ -18,8 +18,6 @@ export function MailList({ mails, onSetSortBy, onRemoveMail, onToggleRead, onTog
         onSetSortBy({ sort: sort })
         setActiveSort(sort)
     }
-
-    console.log('activeSort:', activeSort)
 
     return (
         <section className="mail-list">

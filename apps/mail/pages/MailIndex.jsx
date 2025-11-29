@@ -36,23 +36,11 @@ export function MailIndex() {
     }
 
     function saveMail(mail) {
-        mail.sentAt = Date.now()
         mailService.save(mail)
             .then(() => {
-                setMails([mail, ...mails])
-                showSuccessMsg('Sent')
+                showSuccessMsg('Mail sent')
             })
-            .catch(() => showErrorMsg('Failed to send Mail'))
-    }
-
-    function closeCompose(mail) {
-        if (mail.subject || mail.body || mail.to) {
-            mailService.save(mail)
-                .then(() => {
-                    setMails([mail, ...mails])
-                    showSuccessMsg('Added to drafts')
-                })
-        }
+            .catch(() => showErrorMsg('Failed to save mail'))
     }
 
     function onRemoveMail(ev, mail) {
@@ -93,10 +81,10 @@ export function MailIndex() {
     if (!mails) return <Loader />
 
     return (
-        <section className="mail-index flex space-between">
-            <MailFilter onSetFilterBy={onSetFilterBy} />
+        <section className="mail-index grid">
             <SideNav onSetFilterBy={onSetFilterBy} />
             <main>
+                <MailFilter onSetFilterBy={onSetFilterBy} />
                 {(!mailId || pathname.includes('compose')) &&
                     (<MailList mails={mails}
                         onSetSortBy={onSetSortBy}
@@ -105,9 +93,12 @@ export function MailIndex() {
                         onToggleStar={onToggleStar}
                     />)
                 }
-                <Outlet context={{ onToggleRead, saveMail, closeCompose }} />
+                <Outlet context={{ onToggleRead, saveMail }} />
             </main>
         </section>
     )
 }
+
+
+
 

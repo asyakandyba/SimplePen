@@ -2,7 +2,17 @@
  .mail-index {
      height: 100vh;
      background-color: var(--mail-bg-clr);
+     grid-template-columns: 250px 1fr 20px;
 
      color: var(--mail-txt-clr);
      font-size: 0.875rem;
+
+     >main {
+         grid-column: 2;
+     }
+
+     body.note-menu-open & {
+         grid-template-columns: 50px 1fr;
+
+     }
  }

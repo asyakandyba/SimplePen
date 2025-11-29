@@ -36,6 +36,7 @@
 @import './apps/mail/cmps/MailCompose.css';
 @import './apps/mail/cmps/MailFilter.css';
 @import './apps/mail/cmps/SideNav.css';
+@import './apps/mail/cmps/MailDetails.css';
 
 /* Book */
 @import './apps/book/cmps/AddReview.css';
@@ -49,5 +50,7 @@
 @import './apps/book/pages/BookIndex.css';
 
 /* MQ */
+@import './setup/mq-home.css';
 @import './setup/mqNote.css';
+@import './setup/mq-mail.css';
 @import './setup/mq.css';

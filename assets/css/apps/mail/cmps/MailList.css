@@ -1,6 +1,6 @@
 .mail-list {
     background-color: white;
-    width: 85vw;
+    /* width: 80vw; */
     border-radius: 1rem;
 
     .sort {
@@ -23,7 +23,7 @@
             &:hover {
                 background-color: rgba(174, 174, 174, 0.254);
             }
-            
+
             &.active {
                 background-color: var(--mail-clr-active);
             }
