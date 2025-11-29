@@ -60,7 +60,6 @@ export function NoteContent({
     newOrder.splice(toIdx, 0, moved)
 
     // Inform parent
-    // pinNote(null, newOrder)
     updateOrder(newOrder)
   }
 

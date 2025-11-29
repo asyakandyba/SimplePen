@@ -22,7 +22,11 @@ export function NotePreview({
         notes={pinNotes}
         removeNote={removeNote}
         pinNote={pinNote}
-        updateOrder={updateOrder}
+        updateOrder={newPinnedOrder => {
+          const currentNotPinned = notes.filter(note => !note.isPinned)
+          const merged = [...newPinnedOrder, ...currentNotPinned]
+          updateOrder(merged)
+        }}
       />
       <h1 className="note-list-header">Others</h1>
       <NoteContent
@@ -31,7 +35,11 @@ export function NotePreview({
         notes={notPinNotes}
         removeNote={removeNote}
         pinNote={pinNote}
-        updateOrder={updateOrder}
+        updateOrder={newNotPinnedOrder => {
+          const currentPinned = notes.filter(note => note.isPinned)
+          const merged = [...currentPinned, ...newNotPinnedOrder]
+          updateOrder(merged)
+        }}
       />
     </React.Fragment>
   )
