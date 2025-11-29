@@ -1,14 +1,19 @@
 .note-side-bar {
-  padding-block: 1rem;
+  grid-row: 1;
 
+  padding-block: 1rem;
   display: grid;
   grid-auto-rows: 2rem;
-  grid-row: 1;
   gap: 1.2rem;
   align-items: center;
 
+  /* width: 220px; */
+  background-color: var(--clr-note-bg-1);
+
   body.note-menu-open & {
     width: max-content;
+    /* width: 25px;
+    transition: width 0.3s ease; */
   }
 
   .side-bar-row {

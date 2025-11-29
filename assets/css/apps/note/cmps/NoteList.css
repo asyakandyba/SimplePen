@@ -1,8 +1,10 @@
 .note-list {
   grid-column: 2;
   grid-row: 1;
-
+  /* margin-left: 100px; */
   padding: 1rem;
+
+  justify-self: center;
 
   .note-list-header {
     padding: 1rem;
@@ -17,9 +19,10 @@
 .notes-container {
   justify-self: center;
 
-  padding: 1rem;
+  max-width: 80vw;
 
-  column-count: 7;
+  padding: 1rem;
+  column-count: 5;
   column-gap: 0.7rem;
 
   .note {

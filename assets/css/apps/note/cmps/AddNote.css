@@ -83,18 +83,18 @@
   .todo-preview {
     text-align: start;
   }
-}
 
-.record-btn {
-  position: absolute;
-  right: 20px;
-  bottom: 20px;
+  .record-btn {
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
 
-  background-color: var(--clr-note-bg-1);
-  border: none;
+    background-color: var(--clr-note-bg-1);
+    border: none;
 
-  &:hover {
-    background-color: var(--clr-note-bg-2);
-    box-shadow: 0 0 0 10px var(--clr-note-bg-2);
+    &:hover {
+      background-color: var(--clr-note-bg-2);
+      box-shadow: 0 0 0 10px var(--clr-note-bg-2);
+    }
   }
 }

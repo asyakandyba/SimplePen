@@ -119,7 +119,7 @@ export function OpenNote() {
       <form onSubmit={onSaveNote} onClick={ev => ev.stopPropagation()}>
         <div className=" full-note-input open-note">
           <img
-            className=" note-to-mail"
+            className="note-to-mail"
             onClick={noteToMail}
             src="assets/img/note/note-to-mail.png"
           />
