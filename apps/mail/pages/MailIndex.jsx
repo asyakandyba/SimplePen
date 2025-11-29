@@ -35,11 +35,11 @@ export function MailIndex() {
         setSortBy(sortByToEdit)
     }
 
-    function saveMail(mail, msg) {
+    function saveMail(mail) {
         mailService.save(mail)
             .then(() => {
                 setMails([mail, ...mails])
-                showSuccessMsg(msg)
+                showSuccessMsg('Mail sent')
             })
             .catch(() => showErrorMsg('Failed to save mail'))
     }
@@ -83,9 +83,9 @@ export function MailIndex() {
 
     return (
         <section className="mail-index flex space-between">
-            <MailFilter onSetFilterBy={onSetFilterBy} />
             <SideNav onSetFilterBy={onSetFilterBy} />
             <main>
+                <MailFilter onSetFilterBy={onSetFilterBy} />
                 {(!mailId || pathname.includes('compose')) &&
                     (<MailList mails={mails}
                         onSetSortBy={onSetSortBy}

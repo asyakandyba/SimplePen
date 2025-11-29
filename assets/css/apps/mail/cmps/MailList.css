@@ -23,7 +23,7 @@
             &:hover {
                 background-color: rgba(174, 174, 174, 0.254);
             }
-            
+
             &.active {
                 background-color: var(--mail-clr-active);
             }

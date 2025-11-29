@@ -1,8 +1,4 @@
 .mail-preview {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
     position: relative;
     height: 40px;
 
@@ -17,13 +13,26 @@
             position: absolute;
             top: 50%;
             translate: 0 -50%;
-            left: 3rem;
+            left: 4rem;
         }
     }
 
     section {
-        gap: 1rem;
-        padding-inline: 1rem;
+        gap: 1.2rem;
+    }
+
+    div {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        width: 2rem;
+        height: 2rem;
+        border-radius: 50%;
+
+        &:hover {
+            background-color: rgba(174, 174, 174, 0.254);
+        }
     }
 
     &.read {
@@ -38,21 +47,16 @@
         box-shadow: 0px 0px 5px var(--mail-txt-clr-1);
     }
 
-    img{
-        width:1.2rem;
+    img {
+        width: 1.2rem;
     }
 }
 
 .content {
     position: absolute;
-    width: 75%;
+    width: 63vw;
     left: 250px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-}
-
-
-.fa-solid.fa-star {
-    color: gold;
 }

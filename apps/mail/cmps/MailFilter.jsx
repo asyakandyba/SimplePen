@@ -17,10 +17,13 @@ export function MailFilter({ filterBy, onSetFilterBy }) {
     }
 
     return (
-        <input className="mail-filter"
-            onChange={handleChange}
-            type="text" name='txt'
-            placeholder="Serch mail"
-        />
+        <form className="mail-filter flex">
+            <img src="assets/img/mail/search.svg" />
+            <input
+                onChange={handleChange}
+                type="text" name='txt'
+                placeholder="Serch mail"
+            />
+        </form>
     )
 }

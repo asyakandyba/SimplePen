@@ -1,6 +1,31 @@
-.mail-filter{
-    position: absolute;
-    top:3vh;
-    left: 50%;
-    translate: (-50% -50%);
+.mail-filter {
+
+    position: relative;
+    top: 7px;
+
+    width: 40vw;
+    height: 3rem;
+
+    background-color: rgb(233, 238, 246);
+    border-radius: 2rem;
+
+    >input {
+        margin-inline: 4rem;
+        width: 30vw;
+        background-color: inherit;
+
+        border: none;
+        font-size: 1rem;
+
+        &:focus {
+            outline: none;
+        }
+    }
+
+    >img {
+        position: absolute;
+        top: -.1rem;
+        left: 1.5rem;
+        width: 1.5rem;
+    }
 }
