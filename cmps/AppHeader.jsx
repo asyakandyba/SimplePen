@@ -8,7 +8,7 @@ export function AppHeader() {
     if (pathname === '/note') {
       document.body.classList.toggle('note-menu-open')
     }
-    if (pathname === '/mail') {
+    if (pathname.includes('/mail')) {
       document.body.classList.toggle('note-menu-open')
     }
   }
@@ -17,11 +17,10 @@ export function AppHeader() {
     <header className="app-header">
       <div
         onClick={toggleMenu}
-        className={`burger-container ${
-          pathname.includes('/note') || pathname.includes('/mail')
+        className={`burger-container ${pathname.includes('/note') || pathname.includes('/mail')
             ? ''
             : 'noBurger'
-        }`}
+          }`}
       >
         <img className="burger" src="assets/img/note/burger.png" />
       </div>
