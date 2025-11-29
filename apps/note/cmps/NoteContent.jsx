@@ -42,6 +42,7 @@ export function NoteContent({
                 <img
                   className="note-icon"
                   onClick={ev => {
+                    ev.preventDefault()
                     ev.stopPropagation()
                     onPinNote(id)
                   }}
