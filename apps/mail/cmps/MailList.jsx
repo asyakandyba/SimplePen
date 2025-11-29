@@ -1,6 +1,6 @@
 import { MailPreview } from "./MailPreview.jsx"
 
-const { useState, useEffect } = React
+const { useState } = React
 
 export function MailList({ mails, onSetSortBy, onRemoveMail, onToggleRead, onToggleStar }) {
     const [isAlphaUp, setIsAlphaUp] = useState(false)

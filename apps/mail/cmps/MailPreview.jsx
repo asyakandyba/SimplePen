@@ -58,6 +58,7 @@ export function MailPreview({ mail, onRemoveMail, onToggleRead, onToggleStar }) 
                         </g></svg>
                 }
             </div>
+
             <p><span>{userName}</span></p>
             <p className="content">{subject} - {body}</p>
 

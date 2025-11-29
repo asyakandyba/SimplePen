@@ -51,4 +51,5 @@
 /* MQ */
 @import './setup/mq-home.css';
 @import './setup/mqNote.css';
+@import './setup/mq-mail.css';
 @import './setup/mq.css';

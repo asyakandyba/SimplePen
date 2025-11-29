@@ -43,7 +43,6 @@ export function MailCompose() {
 
     function onSaveMail(mail, ev) {
         if (ev) {
-            console.log('ev:', ev)
             mail.sentAt = Date.now()
             ev.preventDefault()
         }

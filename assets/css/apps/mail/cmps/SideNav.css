@@ -1,17 +1,8 @@
 .side-nav {
-    padding-block: 1rem;
-
-    display: grid;
-    grid-auto-rows: 2rem;
-    grid-row: 1;
-    gap: 1.2rem;
-    align-items: center;
-
-    body.note-menu-open & {
-        width: max-content;
-    }
+    margin-inline-end: 1rem;
 
     button {
+
         display: flex;
         justify-content: center;
         align-items: center;
@@ -30,19 +21,51 @@
         >img {
             width: 1.5rem;
         }
+
+        p {
+            margin: 0;
+        }
+
+        body.note-menu-open & {
+            padding: .5rem;
+            p {
+                display: none;
+            }
+        }
     }
 }
 
-.side-bar-row {
+.mail-navs {
+    display: grid;
+    grid-auto-rows: 2rem;
+    align-items: center;
+
+    body.note-menu-open & {
+        width: max-content;
+    }
+}
+
+.nav-row {
+    height: 100%;
     padding-left: 2rem;
     border-top-right-radius: 5rem;
     border-bottom-right-radius: 5rem;
 
+    position: relative;
     display: flex;
     align-items: center;
     gap: 1rem;
 
     cursor: pointer;
+
+    p {
+        margin: 0;
+
+        >span {
+            position: absolute;
+            right: 1rem;
+        }
+    }
 
     &:hover {
         background-color: #f1f3f4;
@@ -58,7 +81,7 @@
 
     body.note-menu-open & {
         padding: 0.4rem;
-        margin-left: 0.9rem;
+        margin-left: .1rem;
         border-radius: 5rem;
 
         p {

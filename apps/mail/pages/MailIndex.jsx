@@ -38,7 +38,6 @@ export function MailIndex() {
     function saveMail(mail) {
         mailService.save(mail)
             .then(() => {
-                setMails([mail, ...mails])
                 showSuccessMsg('Mail sent')
             })
             .catch(() => showErrorMsg('Failed to save mail'))
@@ -82,7 +81,7 @@ export function MailIndex() {
     if (!mails) return <Loader />
 
     return (
-        <section className="mail-index flex">
+        <section className="mail-index grid">
             <SideNav onSetFilterBy={onSetFilterBy} />
             <main>
                 <MailFilter onSetFilterBy={onSetFilterBy} />
