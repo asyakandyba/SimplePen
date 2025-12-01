@@ -18,7 +18,7 @@
 
 @media (max-width: 1335px) {
   .notes-container {
-    max-width: 75vw;
+    /* max-width: 75vw; */
   }
 }
 
@@ -31,7 +31,7 @@
 @media (max-width: 1070px) {
   .notes-container {
     column-count: 2;
-    max-width: 90vw;
+    /* max-width: 90vw; */
   }
 }
 
@@ -164,20 +164,6 @@
 
 @media (max-width: 350px) {
   .notes-container {
-    justify-self: center;
-
-    min-width: 100vw;
-    padding: 0.5rem;
-
-    column-gap: 0.5rem;
-
-    .note {
-      width: 100%;
-      padding: 0.5rem;
-      margin-bottom: 0.5rem;
-    }
+    column-count: 1;
   }
-}
-
-@media (max-width: 300px) {
 }
