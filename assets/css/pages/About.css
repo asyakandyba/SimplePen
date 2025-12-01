@@ -10,7 +10,7 @@
     background-size: cover;
 
     padding-inline: 12rem;
-    padding-block: 4rem;
+    padding-block: rem;
   }
 
   .about-us-content {
@@ -19,6 +19,8 @@
     display: flex;
     justify-content: center;
     gap: 4rem;
+
+    margin-bottom: 100px;
 
     > .about-person {
       display: grid;
