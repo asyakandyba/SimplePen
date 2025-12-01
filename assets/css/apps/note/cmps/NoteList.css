@@ -52,6 +52,7 @@
       .note-icon {
         opacity: 1;
       }
+      box-shadow: 0 1px 5px rgba(0, 0, 0, 0.379);
     }
 
     cursor: grab;
@@ -78,7 +79,7 @@
   margin-bottom: 1rem;
 
   input {
-    accent-color: black;
+    accent-color: var(--clr-todo-checkbox);
   }
 }
 
@@ -106,8 +107,8 @@
   transform: translateY(70%);
   right: 30px;
 
-  background-color: white;
-  border: 1px solid #dadce0;
+  background-color: var(--clr-note-bg-1);
+  border: 1px solid var(--clr-note-bg-3);
   box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
   border-radius: 8px;
   padding: 0.3rem;
@@ -130,7 +131,7 @@
   }
 
   .active {
-    border: 2px, solid #a142f4;
+    border: 2px, solid var(--clr-palete-active);
   }
 
   .active::after {
@@ -143,8 +144,8 @@
     width: 15px;
     height: 15px;
 
-    background-color: #a142f4;
-    color: white;
+    background-color: var(--clr-palete-active);
+    color: var(--clr-note-bg-1);
     border-radius: 50%;
 
     position: absolute;
@@ -155,9 +156,9 @@
 
 .note-icon {
   &:hover {
-    background-color: rgba(174, 174, 174, 0.254);
+    background-color: var(--note-icons-hover);
     border-radius: 50%;
-    box-shadow: 0 0 0 6px rgba(174, 174, 174, 0.254);
+    box-shadow: 0 0 0 6px var(--note-icons-hover);
   }
 
   opacity: 0;

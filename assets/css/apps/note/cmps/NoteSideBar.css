@@ -28,7 +28,7 @@
     cursor: pointer;
 
     &:hover {
-      background-color: #f1f3f4;
+      background-color: var(--clr-note-bg-2);
     }
 
     > img {
@@ -36,7 +36,7 @@
     }
 
     &.active {
-      background-color: #feefc3;
+      background-color: var(--clr-active-side-bar);
     }
 
     body.note-menu-open & {

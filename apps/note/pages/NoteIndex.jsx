@@ -8,7 +8,7 @@ import { OpenNote } from '../cmps/OpenNote.jsx'
 import { noteService } from '../services/note.service.js'
 
 const { useState, useEffect } = React
-const { Outlet, useParams } = ReactRouterDOM
+const { Outlet } = ReactRouterDOM
 
 export function NoteIndex() {
   const [notes, setNotes] = useState([])
@@ -34,11 +34,11 @@ export function NoteIndex() {
                 ) // update
               : [savedNote, ...prevNotes] // add
         )
-        showSuccessMsg('Note added!')
+        showSuccessMsg('Note saved')
       })
       .catch(err => {
         console.log('err:', err)
-        showErrorMsg('Problem adding note')
+        showErrorMsg('Problem saving note')
       })
   }
 
@@ -106,9 +106,13 @@ export function NoteIndex() {
     noteService.saveAll(newOrder)
   }
 
+  function onBack() {
+    document.body.classList.add('note-menu-open')
+  }
+
   return (
     <section className="note-index note-main-layout">
-      <div className="note-black-screen-for-menu"></div>
+      <div onClick={onBack} className="note-black-screen-for-menu"></div>
       <NoteSideBar setTypeFilter={setTypeFilter} />
       <NoteList
         notes={notes}

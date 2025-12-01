@@ -7,9 +7,9 @@
     width: 20px;
 
     &:hover {
-      background-color: rgba(174, 174, 174, 0.254);
+      background-color: var(--note-icons-hover);
       border-radius: 50%;
-      box-shadow: 0 0 0 6px rgba(174, 174, 174, 0.254);
+      box-shadow: 0 0 0 6px var(--note-icons-hover);
       cursor: pointer;
     }
   }

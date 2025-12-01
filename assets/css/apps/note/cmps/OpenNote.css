@@ -25,14 +25,14 @@
     cursor: pointer;
 
     &:hover {
-      background-color: rgba(174, 174, 174, 0.254);
+      background-color: var(--note-icons-hover);
       border-radius: 50%;
     }
   }
 }
 
 .note-black-screen {
-  background-color: rgba(0, 0, 0, 0.409);
+  background-color: var(--clr-note-black-screen);
 
   width: 100vw;
   height: 100vh;

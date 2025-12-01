@@ -100,13 +100,24 @@
   .add-note {
     form {
       .half-note-input {
-        width: 60vw;
+        width: 65vw;
 
         > input {
           width: 30vw;
         }
       }
     }
+  }
+
+  .note-paint-palete {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    width: max-content;
+
+    position: absolute;
+    z-index: 1;
+    bottom: -50px;
+    left: 0px;
   }
 }
 

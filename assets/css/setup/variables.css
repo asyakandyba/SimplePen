@@ -19,6 +19,12 @@
   --clr-note-bg-3: #efeff1;
 
   --clr-note-text-1: #737679;
+  --clr-todo-checkbox: #000000;
+  --clr-palete-active: #a142f4;
+  --note-icons-hover: rgba(174, 174, 174, 0.254);
+  --clr-active-side-bar: #feefc3;
+
+  --clr-note-black-screen: rgba(0, 0, 0, 0.409);
 
   /* Book Vars */
   --book-bg: #ffa4a4;
